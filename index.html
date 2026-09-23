@@ -2,10 +2,18 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>AstroKing | Uzayın Hükümdarı</title>
-    
-    <!-- ÖNEMLİ: Yüklediğin logo görselini indir ve bu HTML dosyasının bulunduğu klasöre 'logo.png' adıyla kaydet. -->
+
+    <!-- ===== PWA AYARLARI ===== -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#00b4ff">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="AstroKing">
+    <link rel="apple-touch-icon" href="logo.png">
+    <link rel="icon" type="image/png" href="logo.png">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,20 +50,10 @@
             line-height: 1.6;
         }
 
-        /* Typography */
         h1, h2, h3 {
             font-family: 'Orbitron', sans-serif;
             text-transform: uppercase;
             letter-spacing: 2px;
-        }
-
-        .glow-text {
-            text-shadow: 0 0 10px var(--primary-blue), 0 0 20px var(--glow-blue);
-        }
-
-        .gold-text {
-            color: var(--accent-gold);
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
         }
 
         /* Navigation */
@@ -123,7 +121,6 @@
             width: 100%;
         }
 
-        /* Hamburger Menu Button (Mobilde Görünecek) */
         .menu-toggle {
             display: none;
             flex-direction: column;
@@ -148,7 +145,6 @@
             box-shadow: 0 0 10px var(--primary-blue);
         }
 
-        /* Hamburger aktif olunca X işaretine dönüşsün */
         .menu-toggle.active span:nth-child(1) {
             transform: translateY(10.5px) rotate(45deg);
         }
@@ -228,17 +224,6 @@
             gap: 8px;
         }
 
-        .btn-primary {
-            background: linear-gradient(45deg, var(--glow-blue), var(--primary-blue));
-            color: #fff;
-            box-shadow: 0 0 15px rgba(0, 180, 255, 0.5);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 0 25px rgba(0, 180, 255, 0.8);
-        }
-
         .btn-discord {
             background: linear-gradient(45deg, #5865F2, #7289da);
             color: #fff;
@@ -260,6 +245,46 @@
             background: var(--accent-gold);
             color: #000;
             box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+
+        /* İndirme Butonu (PWA Install) */
+        #installBtn {
+            display: none;
+            position: fixed;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 15px 35px;
+            background: linear-gradient(45deg, var(--accent-gold), #ffaa00);
+            color: #000;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 900;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            cursor: pointer;
+            box-shadow: 0 5px 25px rgba(255, 215, 0, 0.6);
+            z-index: 9999;
+            animation: pulse 2s infinite;
+            align-items: center;
+            gap: 10px;
+        }
+
+        #installBtn:hover {
+            transform: translateX(-50%) scale(1.05);
+            box-shadow: 0 8px 35px rgba(255, 215, 0, 0.9);
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 5px 25px rgba(255, 215, 0, 0.6); }
+            50% { box-shadow: 0 5px 35px rgba(255, 215, 0, 1); }
+        }
+
+        #installBtn svg {
+            width: 20px;
+            height: 20px;
+            fill: #000;
         }
 
         /* Sections */
@@ -287,7 +312,6 @@
             box-shadow: 0 0 10px var(--primary-blue);
         }
 
-        /* About Section */
         .about-content {
             display: flex;
             align-items: center;
@@ -321,7 +345,6 @@
             border: 1px solid rgba(0, 180, 255, 0.3);
         }
 
-        /* Features Grid */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -361,7 +384,6 @@
             font-size: 1rem;
         }
 
-        /* Community Section */
         #community {
             text-align: center;
             background: linear-gradient(180deg, transparent, rgba(0, 180, 255, 0.05), transparent);
@@ -420,9 +442,6 @@
             fill: currentColor;
         }
 
-        /* ========================================= */
-        /* FORM ALANLARI (ORTAK STİL)                */
-        /* ========================================= */
         .application {
             max-width: 800px;
             margin: 60px auto;
@@ -543,7 +562,6 @@
             font-weight: 700;
         }
 
-        /* Footer */
         footer {
             text-align: center;
             padding: 40px 20px;
@@ -569,18 +587,15 @@
             color: var(--primary-blue);
         }
 
-        /* Mobile Responsive */
         @media (max-width: 900px) {
             nav {
                 padding: 15px 20px;
             }
 
-            /* Hamburger butonu mobilde görünsün */
             .menu-toggle {
                 display: flex;
             }
 
-            /* Menü kapalıyken gizli, aktifken açılır */
             .nav-links {
                 position: fixed;
                 top: 0;
@@ -620,7 +635,6 @@
                 padding: 5px 0;
             }
 
-            /* Arka plan karartma (menü açıkken) */
             .menu-overlay {
                 position: fixed;
                 top: 0;
@@ -669,6 +683,12 @@
             form button[type="submit"] {
                 width: 100%;
             }
+
+            #installBtn {
+                padding: 12px 25px;
+                font-size: 0.9rem;
+                bottom: 15px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -689,7 +709,6 @@
             <span>ASTRO</span>KING
         </a>
         
-        <!-- Mobilde sağ üstte görünecek hamburger butonu -->
         <button class="menu-toggle" id="menuToggle" aria-label="Menüyü Aç/Kapat">
             <span></span>
             <span></span>
@@ -779,9 +798,7 @@
         </div>
     </section>
 
-    <!-- ============================================== -->
-    <!-- 1. FORM: YETKİLİ BAŞVURUSU                    -->
-    <!-- ============================================== -->
+    <!-- Yetkili Başvurusu -->
     <section id="yetkili" class="application">
         <h1>🛡️ Yetkili Başvurusu</h1>
         <p>Hey Sen! AstroKing Sunucusunda Yetkili Olmak İstermisin?
@@ -821,9 +838,7 @@
         </div>
     </section>
 
-    <!-- ============================================== -->
-    <!-- 2. FORM: DESTEK SİSTEMİ                       -->
-    <!-- ============================================== -->
+    <!-- Destek Sistemi -->
     <section id="destek" class="application">
         <h1>🛠️ Destek Sistemi</h1>
         <p>Herhangi bir sorun mu yaşıyorsun? Oyun içi hata, hesap sorunu veya genel bir destek talebin için formu doldur. En geç 1 hafta içinde geri dönüş yapalım.</p>
@@ -871,9 +886,12 @@
         </div>
     </footer>
 
-    <!-- ================================================== -->
-    <!-- JAVASCRIPT KODU                                    -->
-    <!-- ================================================== -->
+    <!-- İndirme Butonu (Ana Ekrana Ekle) -->
+    <button id="installBtn">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+        Uygulamayı İndir
+    </button>
+
     <script>
     // ===== HAMBURGER MENÜ (MOBİL) =====
     const menuToggle = document.getElementById('menuToggle');
@@ -903,7 +921,44 @@
         });
     });
 
-    // ===== ORİJİNAL JAVASCRIPT KODU (HİÇ DEĞİŞTİRİLMEDİ) =====
+    // ===== PWA: SERVICE WORKER KAYDI =====
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('service-worker.js')
+                .then(reg => console.log('✅ Service Worker kayıtlı:', reg.scope))
+                .catch(err => console.log('❌ Service Worker hatası:', err));
+        });
+    }
+
+    // ===== PWA: İNDİRME BUTONU =====
+    let deferredPrompt;
+    const installBtn = document.getElementById('installBtn');
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        installBtn.style.display = 'flex';
+    });
+
+    installBtn.addEventListener('click', async () => {
+        if (!deferredPrompt) {
+            alert('İndirme seçeneği şu anda mevcut değil. Tarayıcı menüsünden "Ana Ekrana Ekle" seçeneğini kullanabilirsin.');
+            return;
+        }
+        deferredPrompt.prompt();
+        const { outcome } = await deferredPrompt.userChoice;
+        console.log('Kullanıcı seçimi:', outcome);
+        deferredPrompt = null;
+        installBtn.style.display = 'none';
+    });
+
+    window.addEventListener('appinstalled', () => {
+        console.log('✅ AstroKing uygulaması yüklendi!');
+        installBtn.style.display = 'none';
+        deferredPrompt = null;
+    });
+
+    // ===== ORİJİNAL JAVASCRIPT KODU =====
     const webhookURL = "https://discord.com/api/webhooks/1461372523957457142/j_Qty4Vhcagtp0F5qAJqpEKhm9Ega0hZv5HxDEgIL7Rxbpddq8zVYx8iY_GnedVSncsp";
 
     document.getElementById("appForm").addEventListener("submit", function(e) {
@@ -948,7 +1003,6 @@
         });
     });
 
-    // ===== DESTEK SİSTEMİ JAVASCRIPT KODU =====
     document.getElementById("appForm2").addEventListener("submit", function(e) {
         e.preventDefault();
 
@@ -991,7 +1045,7 @@
         });
     });
 
-    // ===== SAYFA İÇİ YUMUŞAK KAYDIRMA =====
+    // Sayfa içi yumuşak kaydırma
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
@@ -1005,7 +1059,7 @@
         });
     });
 
-    // ===== SCROLL ANİMASYONU =====
+    // Scroll Animasyonu
     const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
