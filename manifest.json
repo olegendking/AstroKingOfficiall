@@ -1,0 +1,31 @@
+{
+  "name": "AstroKing - Uzayın Hükümdarı",
+  "short_name": "AstroKing",
+  "description": "AstroKing topluluğu resmi uygulaması. Turnuvalar, destek sistemi ve daha fazlası.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#050510",
+  "theme_color": "#00b4ff",
+  "lang": "tr",
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
