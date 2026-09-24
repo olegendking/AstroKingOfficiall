@@ -800,81 +800,30 @@
 
     <!-- Yetkili Başvurusu -->
     <section id="yetkili" class="application">
-        <h1>🛡️ Yetkili Başvurusu</h1>
+        <h1>🛡️ Yetkili Basvurusu</h1>
         <p>Hey Sen! AstroKing Sunucusunda Yetkili Olmak İstermisin?
-            Ozaman Formu Doldurup Bize Gönder En Geç 1 Hafta İçinde Geri Dönüş Yapalım.</p>
-
-        <form id="appForm">
-            <label for="name">Gerçek isim ve yaşın?</label>
-            <input id="name" type="text" placeholder="Ad Soyad / Yaş" required>
-
-            <label for="dcname">Discord nick ve Discordu aktif kullanabiliyor musun?</label>
-            <input id="dcname" type="text" placeholder="Discord (isim#1234)" required>
-
-            <label for="time">Sunucuda günlük hangi saat aralıklarında aktif olabilirsiniz?</label>
-            <select id="time" required>
-                <option value="">Günlük Aktif Süre</option>
-                <option>1-2 Saat</option>
-                <option>3-5 Saat</option>
-                <option>6+ Saat</option>
-            </select>
-
-            <label for="soru1">Sohbet içinde ki üslübunuza, yazım ve imla kurallarına dikkat eder misiniz?</label>
-            <input id="soru1" type="text" placeholder="" required>
-
-            <label for="soru2">Diğer yetkili üyeleriyle iyi anlaşabilceğini düşünüyor musun? Halihazırda iyi anlaştığın bir yetkili var mı? Varsa kim?</label>
-            <input id="soru2" type="text" placeholder="" required>
-
-            <label for="reason">Bize Kendinden Biraz Bahsedermisin, Seni Neden Yetkili Alalım?</label>
-            <textarea id="reason" placeholder="Neden yetkili olmak istiyorsun?" required></textarea>
-
-            <button type="submit">Basvuruyu Gönder</button>
-        </form>
-
-        <div class="success" id="successMsg">
-            ✅ Başvurun Discord’a gönderildi!<br/>
-            Discord Sunucumza Gelip Kabul Edilip Edilmedini Kontrol Edebilirsin:<br/>
-            <a href="https://discord.gg/98qcpwJ47B" target="_blank">https://discord.gg/98qcpwJ47B</a>
-        </div>
+            Ozaman Discord Sunucumuzdan Talep Açarak Başvurabilirsin. Kendine Güvenen Herkesi Bekleriz...</p>
     </section>
 
     <!-- Destek Sistemi -->
     <section id="destek" class="application">
         <h1>🛠️ Destek Sistemi</h1>
-        <p>Herhangi bir sorun mu yaşıyorsun? Oyun içi hata, hesap sorunu veya genel bir destek talebin için formu doldur. En geç 1 hafta içinde geri dönüş yapalım.</p>
+        <p>Herhangi Bir Sorun Mu Yaşıyorsun? Oyun İçi Hata, Hesap Sorunu Veya Genel Bir Destek İçin Discord Sunucumuzdan Talep Açabilirsiniz.</p>
 
         <form id="appForm2">
-            <label for="name2">Adınız Soyadınız / Yaşınız?</label>
-            <input id="name2" type="text" placeholder="Ad Soyad / Yaş" required>
-
-            <label for="dcname2">Discord kullanıcı adınız ve etiketiniz?</label>
-            <input id="dcname2" type="text" placeholder="Discord (isim#1234)" required>
-
-            <label for="time2">Sorununuzun aciliyet durumu nedir?</label>
-            <select id="time2" required>
-                <option value="">Aciliyet Seçiniz</option>
-                <option>Düşük - Genel Soru</option>
-                <option>Orta - Oyun İçi Hata</option>
-                <option>Yüksek - Hesap/Ödeme Sorunu</option>
-            </select>
-
-            <label for="soru1_2">Sorununuzun kategorisi nedir? (Örn: Oyun Hatası, Hesap Sorunu, Öneri)</label>
-            <input id="soru1_2" type="text" placeholder="Kategori" required>
-
-            <label for="soru2_2">Daha önce bu sorunla ilgili bir çözüm denediniz mi? Sonuç ne oldu?</label>
-            <input id="soru2_2" type="text" placeholder="Denediğiniz çözümler" required>
-
-            <label for="reason2">Sorununuzu detaylıca açıklayın. Varsa ekran görüntüsü veya video linki ekleyin.</label>
-            <textarea id="reason2" placeholder="Detaylı açıklama..." required></textarea>
-
-            <button type="submit">Destek Talebi Gönder</button>
+            <label for="name2">Destek Sistemi ve Başvuru Kanalı:</label>
+            <p>Link Eklenecek...</p>
         </form>
+    </section>
 
-        <div class="success" id="successMsg2">
-            ✅ Destek talebiniz Discord’a gönderildi!<br/>
-            Discord sunucumuza gelip talebinizin durumunu kontrol edebilirsiniz:<br/>
-            <a href="https://discord.gg/98qcpwJ47B" target="_blank">https://discord.gg/98qcpwJ47B</a>
-        </div>
+    <!-- Kurallar -->
+    <section id="kurallar" class="application">
+        <h1>📕 Kurallarımız</h1>
+        <p>Ekip ve Sunucu Kurallarımıza Uyduğunuz İçin Teşekkür Ederiz...</p>
+
+        <form id="appForm2">
+            <label for="name2">1.</label></br> <p>Kurallar Eklenecektir...</p>
+        </form>
     </section>
 
     <!-- Footer -->
@@ -956,93 +905,6 @@
         console.log('✅ AstroKing uygulaması yüklendi!');
         installBtn.style.display = 'none';
         deferredPrompt = null;
-    });
-
-    // ===== ORİJİNAL JAVASCRIPT KODU =====
-    const webhookURL = "https://discord.com/api/webhooks/1552531841934958652/KswY00Wl1b7qGYRaw5ymh3Uo7u6hApacMVxAaSau3qTiqic70RbmDWQf0X6f8HO9HE3a";
-
-    document.getElementById("appForm").addEventListener("submit", function(e) {
-        e.preventDefault();
-
-        const name = document.getElementById("name").value;
-        const dcname = document.getElementById("dcname").value;
-        const time = document.getElementById("time").value;
-        const soru1 = document.getElementById("soru1").value;
-        const soru2 = document.getElementById("soru2").value;
-        const reason = document.getElementById("reason").value;
-
-        const data = {
-            username: "AstroKing Başvuru Sistemi",
-            embeds: [{
-                title: "🛡️ Yeni Yetkili Başvurusu",
-                color: 3447003,
-                fields: [
-                    { name: "👤 Ad Soyad / Yaş", value: name, inline: true },
-                    { name: "💬 Discord", value: dcname, inline: false },
-                    { name: "⏱️ Aktif Süre", value: time, inline: false },
-                    { name: "Sohbet içinde ki üslübunuza, yazım ve imla kurallarına dikkat eder misiniz?", value: soru1, inline: false },
-                    { name: "Diğer yetkili üyeleriyle iyi anlaşabilceğini düşünüyor musun?", value: soru2, inline: false },
-                    { name: "Kendinden Bahsedermisin? Seni Neden Alalım?", value: reason, inline: false }
-                ],
-                footer: { text: "AstroKing Yetkili Sistemi" }
-            }]
-        };
-
-        fetch(webhookURL, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(data)
-        })
-        .then(() => {
-            document.getElementById("successMsg").style.display = "block";
-            document.getElementById("appForm").reset();
-        })
-        .catch(err => {
-            alert("Discord'a gönderilemedi!");
-            console.error(err);
-        });
-    });
-
-    document.getElementById("appForm2").addEventListener("submit", function(e) {
-        e.preventDefault();
-
-        const name = document.getElementById("name2").value;
-        const dcname = document.getElementById("dcname2").value;
-        const time = document.getElementById("time2").value;
-        const soru1 = document.getElementById("soru1_2").value;
-        const soru2 = document.getElementById("soru2_2").value;
-        const reason = document.getElementById("reason2").value;
-
-        const data = {
-            username: "AstroKing Destek Sistemi",
-            embeds: [{
-                title: "🛠️ Yeni Destek Talebi",
-                color: 3447003,
-                fields: [
-                    { name: "👤 Ad Soyad / Yaş", value: name, inline: true },
-                    { name: "💬 Discord", value: dcname, inline: false },
-                    { name: "⏱️ Aciliyet Durumu", value: time, inline: false },
-                    { name: "Sorunun Kategorisi", value: soru1, inline: false },
-                    { name: "Daha Önce Denenen Çözüm", value: soru2, inline: false },
-                    { name: "Detaylı Açıklama", value: reason, inline: false }
-                ],
-                footer: { text: "AstroKing Destek Sistemi" }
-            }]
-        };
-
-        fetch(webhookURL, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(data)
-        })
-        .then(() => {
-            document.getElementById("successMsg2").style.display = "block";
-            document.getElementById("appForm2").reset();
-        })
-        .catch(err => {
-            alert("Discord'a gönderilemedi!");
-            console.error(err);
-        });
     });
 
     // Sayfa içi yumuşak kaydırma
